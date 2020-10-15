@@ -2,7 +2,7 @@ Pokedex
 Pokemon description app
 -----------------------------
 
-► Technologies stack
+► Technology stack
 -----------------------------
   MVVM
   
@@ -17,7 +17,9 @@ Pokemon description app
 ►  In future
 -----------------------------
   Retrofit
+  
   Moshi
+  
   Room
   
 ►Current UI
