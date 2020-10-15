@@ -5,9 +5,13 @@ Pokemon description app
 ► Technologies stack
 -----------------------------
   MVVM
+  
   ViewModel + LiveData
+  
   RecyclerView + ListAdapter
+  
   Repository pattern
+  
   Picasso
   
 ►  In future
