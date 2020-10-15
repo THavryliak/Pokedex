@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Pokedex</string>
+
     <string name="card_content_description">Pokemon card.</string>
+    <string name="loadingError">Some error occurred…</string>
+    <string name="loading">Loading…</string>
 </resources>

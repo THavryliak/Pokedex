@@ -11,10 +11,13 @@ import com.example.pokedex.Model.PokemonDataClass
 import com.example.pokedex.R
 import com.squareup.picasso.Picasso
 
-class PokemonsListAdapter: ListAdapter<PokemonDataClass, PokemonsListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
+class PokemonListAdapter :
+    ListAdapter<PokemonDataClass, PokemonListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
-        return PokemonViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.pokemon, parent, false))
+        return PokemonViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.pokemon, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
