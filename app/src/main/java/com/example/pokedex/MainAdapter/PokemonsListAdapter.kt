@@ -1,5 +1,6 @@
 package com.example.pokedex.MainAdapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,12 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokedex.Model.PokemonDataClass
+import com.example.pokedex.Model.PokeData
 import com.example.pokedex.R
 import com.squareup.picasso.Picasso
 
-class PokemonListAdapter :
-    ListAdapter<PokemonDataClass, PokemonListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
+class PokemonListAdapter : ListAdapter<PokeData, PokemonListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         return PokemonViewHolder(
@@ -28,9 +28,10 @@ class PokemonListAdapter :
         private val name = view.findViewById<TextView>(R.id.name)
         private val image = view.findViewById<ImageView>(R.id.image)
 
-        fun bindTo(pokemon: PokemonDataClass) {
-            name.text = pokemon.name
-            Picasso.get().load(pokemon.imageURL).into(image)
+        @SuppressLint("DefaultLocale")
+        fun bindTo(pokemon: PokeData) {
+            name.text = pokemon.name.capitalize()
+            Picasso.get().load(pokemon.url).into(image)
         }
     }
 }
