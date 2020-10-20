@@ -14,17 +14,13 @@ Pokemon description app
   
   Picasso
   
-►  In future
------------------------------
   Retrofit
   
   Moshi
-  
-  Room
   
 ►Current UI
 -----------------------------
   
 UI v1.0
 
-![loading](https://user-images.githubusercontent.com/72496644/96141313-8d057700-0f09-11eb-8f72-e0f72e7adb48.gif)
+![LoadingGif](https://user-images.githubusercontent.com/72496644/96644674-0cdc7880-1332-11eb-8e38-57c61a28c237.gif)
