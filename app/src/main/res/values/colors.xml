@@ -11,38 +11,54 @@
 
     <color name="main_screen_text_color">#FFDB15</color>
 
+    <color name="text_stats_color">#e2f1f8</color>
 
-    <color name="Honeydew">#F0FFF0</color>
-    <color name="AliceBlue">#F0F8FF</color>
-    <color name="Khaki">#F0E68C</color>
-    <color name="LightCoral">#F08080</color>
-    <color name="PaleGoldenrod">#EEE8AA</color>
-    <color name="Violet">#EE82EE</color>
-    <color name="DarkSalmon">#E9967A</color>
-    <color name="Lavender">#E6E6FA</color>
-    <color name="LightCyan">#E0FFFF</color>
-    <color name="BurlyWood">#DEB887</color>
-    <color name="Plum">#DDA0DD</color>
-    <color name="Gainsboro">#DCDCDC</color>
-    <color name="Crimson">#DC143C</color>
-    <color name="PaleVioletRed">#DB7093</color>
-    <color name="Goldenrod">#DAA520</color>
-    <color name="Orchid">#DA70D6</color>
-    <color name="Thistle">#D8BFD8</color>
-    <color name="LightGrey">#D3D3D3</color>
-    <color name="Tan">#D2B48C</color>
-    <color name="Chocolate">#D2691E</color>
-    <color name="Peru">#CD853F</color>
-    <color name="IndianRed">#CD5C5C</color>
-    <color name="MediumVioletRed">#C71585</color>
+    <color name="hp">#EC0D0D</color>
+    <color name="attack">#CB0DEC</color>
+    <color name="def">#22EC0D</color>
+    <color name="speed">#F2E00B</color>
+    <color name="exp">#0DB8EC</color>
+
+    <color name="a">#e1bee7</color>
+    <color name="b">#ffab91</color>
+    <color name="c">#e2f1f8</color>
+    <color name="d">#ffe082</color>
+    <color name="e">#81c784</color>
+    <color name="f">#b4ffff</color>
+    <color name="g">#29b6f6</color>
+    <color name="h">#00e676</color>
+    <color name="i">#18ffff</color>
+    <color name="j">#76ff03</color>
+    <color name="k">#448aff</color>
+    <color name="l">#b085f5</color>
+    <color name="m">#e040fb</color>
+    <color name="n">#ec407a</color>
+    <color name="o">#f50057</color>
+    <color name="p">#f44336</color>
+    <color name="r">#ff1744</color>
+    <color name="s">#ffff00</color>
+    <color name="u">#880e4f</color>
 
     <array name="colors">
-        <item name="1">@color/Honeydew</item>
-        <item name="2">@color/MediumVioletRed</item>
-        <item name="3">@color/Chocolate</item>
-        <item name="4">@color/Plum</item>
-        <item name="5">@color/Violet</item>
-        <item name="6">@color/Peru</item>
-        <item name="7">@color/Crimson</item>
+        <item name="1">@color/a</item>
+        <item name="2">@color/b</item>
+        <item name="3">@color/c</item>
+        <item name="4">@color/d</item>
+        <item name="5">@color/e</item>
+        <item name="6">@color/f</item>
+        <item name="7">@color/g</item>
+        <item name="8">@color/h</item>
+        <item name="9">@color/i</item>
+        <item name="10">@color/j</item>
+        <item name="11">@color/k</item>
+        <item name="12">@color/l</item>
+        <item name="13">@color/m</item>
+        <item name="14">@color/n</item>
+        <item name="15">@color/o</item>
+        <item name="16">@color/p</item>
+        <item name="17">@color/r</item>
+        <item name="18">@color/s</item>
+        <item name="19">@color/u</item>
+
     </array>
 </resources>
