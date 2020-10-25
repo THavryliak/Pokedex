@@ -1,17 +1,15 @@
-package com.example.pokedex
+package com.example.pokedex.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.pokedex.MainAdapter.PokemonListAdapter
 import com.example.pokedex.Model.PokeData
+import com.example.pokedex.R
 import com.example.pokedex.ViewModel.PokemonViewModel
 import kotlinx.android.synthetic.main.fragment_poke_list.*
 
-class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
-
+class PokeListFragment : Fragment(R.layout.fragment_poke_list){
 
     private val model: PokemonViewModel = PokemonViewModel()
     private val adapter = PokemonListAdapter()
@@ -20,7 +18,6 @@ class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
         super.onCreate(savedInstanceState)
 
         recyclerView.adapter = adapter
-
 
         model.loadingState.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             if (it) {
@@ -50,8 +47,7 @@ class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
         model.setState()
     }
 
-    fun setData(data: List<PokeData>) {
+    private fun setData(data: List<PokeData>) {
         adapter.submitList(data)
     }
-
 }

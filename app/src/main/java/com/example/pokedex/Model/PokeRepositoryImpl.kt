@@ -1,6 +1,6 @@
 package com.example.pokedex.Model
 
-import com.example.pokedex.Model.PokeApiInteraction.*
+import com.example.pokedex.Model.PokeApi.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -9,17 +9,17 @@ class PokeRepositoryImpl: PokeRepository {
     private val api: PokeApiRequest = createPokeApiService()
 
     override fun getPokemonList(callback: PokeRepository.ApiCallback<List<PokeData>>) {
-        api.fetchPokemonList().enqueue(object : Callback<DataListResponse>{
-             override fun onResponse(call: Call<DataListResponse>, response: Response<DataListResponse>) {
+        api.fetchPokemonList().enqueue(object : Callback<PokeListResponse>{
+             override fun onResponse(call: Call<PokeListResponse>, response: Response<PokeListResponse>) {
                 val pokeList = response.body()
                 if (response.isSuccessful && pokeList != null){
-                    return callback.onSuccess(pokeList.results.map { PokeData -> PokeData(PokeData.name, PokeData.getImageUrl()) })
+                    return callback.onSuccess(pokeList.results.map { PokeData -> PokeData( PokeData.name, PokeData.getImageUrl()) })
                 }
                 else{
                     callback.onError()
                 }
             }
-            override fun onFailure(call: Call<DataListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<PokeListResponse>, t: Throwable) {
                 callback.onError()
             }
         })

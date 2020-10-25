@@ -11,6 +11,13 @@
 
     <color name="main_screen_text_color">#FFDB15</color>
 
+    <color name="text_stats_color">#e2f1f8</color>
+
+    <color name="hp">#EC0D0D</color>
+    <color name="attack">#CB0DEC</color>
+    <color name="def">#22EC0D</color>
+    <color name="speed">#F2E00B</color>
+    <color name="exp">#0DB8EC</color>
 
     <color name="a">#e1bee7</color>
     <color name="b">#ffab91</color>

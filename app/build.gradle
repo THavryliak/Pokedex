@@ -14,10 +14,13 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    dataBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.pokedex"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

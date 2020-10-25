@@ -14,9 +14,21 @@
     
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/card_text_color</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
         <item name="fontFamily">@font/boogaloo</item>
     </style>
 
+    <style name="detail_text_style">
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="fontFamily">@font/boogaloo</item>
+        <item name="android:layout_marginLeft">@dimen/side_margin</item>
+        <item name="android:layout_marginRight">@dimen/side_margin</item>
+        <item name="android:textColor">@color/text_stats_color</item>
+    </style>
+
+    <style name="progressBarStyle">
+        <item name="android:max">500</item>
+        <item name="minHeight">20dp</item>
+    </style>
 
 </resources>

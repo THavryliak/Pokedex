@@ -1,4 +1,4 @@
-package com.example.pokedex.Model.PokeApiInteraction
+package com.example.pokedex.Model.PokeApi
 
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -12,7 +12,7 @@ interface PokeApiRequest {
     fun fetchPokemonList(
         @Query("limit") limit: Int = 1000,
         @Query("offset") offset: Int = 0
-    ): Call<DataListResponse>
+    ): Call<PokeListResponse>
 }
 
 
