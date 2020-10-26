@@ -21,6 +21,4 @@ Pokemon description app
 ►Current UI
 -----------------------------
   
-UI v1.0
-
-![LoadingGif](https://user-images.githubusercontent.com/72496644/96644674-0cdc7880-1332-11eb-8e38-57c61a28c237.gif)
+![final](https://user-images.githubusercontent.com/72496644/97152220-428dc100-1779-11eb-89e0-6d11cae4afa6.gif)
