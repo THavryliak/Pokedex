@@ -17,9 +17,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.pokemon.view.*
 import kotlin.random.Random
 
-class PokemonListAdapter : ListAdapter<PokeData, PokemonListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
-
-    private val detailModel: DetailViewModel = DetailViewModel()
+class PokemonListAdapter(private val detailModel: DetailViewModel) : ListAdapter<PokeData, PokemonListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonViewHolder {
         return PokemonViewHolder(
@@ -31,9 +29,9 @@ class PokemonListAdapter : ListAdapter<PokeData, PokemonListAdapter.PokemonViewH
         holder.itemView.setBackgroundColor(setRandomCardColor(holder.itemView.context))
         holder.bind(getItem(position))
 
-        //fix here
+        //bad
         holder.itemView.setOnClickListener{ view ->
-            detailModel.sendData(Pair(holder.itemView.name.text.toString(), (position + 1).toString()))
+            detailModel.sendData(Pair(holder.itemView.name.text.toString(), (position + 1)))
             view.findNavController().navigate(R.id.action_pokeListFragment_to_pokeDetailsFragment)
         }
     }

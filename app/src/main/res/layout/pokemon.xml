@@ -6,7 +6,7 @@
     android:layout_margin="@dimen/card_margin"
     android:minWidth="@dimen/image_view_main_size"
     android:minHeight="@dimen/image_view_main_size"
-    app:cardCornerRadius="10sp"
+    app:cardCornerRadius="20dp"
     app:cardBackgroundColor="@color/card_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout

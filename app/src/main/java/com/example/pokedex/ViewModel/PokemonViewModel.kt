@@ -10,8 +10,7 @@ import com.example.pokedex.Model.PokeRepositoryImpl
 import kotlin.random.Random
 
 
-class PokemonViewModel : ViewModel() {
-    private val daoOBJ: PokeRepositoryImpl = PokeRepositoryImpl()
+class PokemonViewModel(private val repo: PokeRepositoryImpl) : ViewModel() {
 
     private val _loadingState = MutableLiveData<Boolean>()
     val loadingState: LiveData<Boolean> = _loadingState
@@ -30,7 +29,7 @@ class PokemonViewModel : ViewModel() {
             if (Random.nextInt(1, 11) == 5) {
                 showError()
             } else {
-                daoOBJ.getPokemonList(object : PokeRepository.ApiCallback<List<PokeData>> {
+                repo.getPokemonList(object : PokeRepository.ApiCallback<List<PokeData>> {
                     override fun onSuccess(data: List<PokeData>) {
                         showContent(data)
                     }
