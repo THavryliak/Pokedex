@@ -26,9 +26,4 @@
         <item name="android:textColor">@color/text_stats_color</item>
     </style>
 
-    <style name="progressBarStyle">
-        <item name="android:max">500</item>
-        <item name="minHeight">20dp</item>
-    </style>
-
 </resources>

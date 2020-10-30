@@ -8,11 +8,11 @@ import com.example.pokedex.Model.PokeData
 import com.example.pokedex.R
 import com.example.pokedex.ViewModel.PokemonViewModel
 import kotlinx.android.synthetic.main.fragment_poke_list.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class PokeListFragment : Fragment(R.layout.fragment_poke_list){
+class PokeListFragment(private val adapter: PokemonListAdapter) : Fragment(R.layout.fragment_poke_list){
 
-    private val model: PokemonViewModel = PokemonViewModel()
-    private val adapter = PokemonListAdapter()
+    private val model: PokemonViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

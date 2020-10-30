@@ -5,8 +5,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PokeRepositoryImpl: PokeRepository {
-    private val api: PokeApiRequest = createPokeApiService()
+class PokeRepositoryImpl(private val api: PokeApiRequest ): PokeRepository {
 
     override fun getPokemonList(callback: PokeRepository.ApiCallback<List<PokeData>>) {
         api.fetchPokemonList().enqueue(object : Callback<PokeListResponse>{

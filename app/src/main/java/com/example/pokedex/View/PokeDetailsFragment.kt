@@ -9,25 +9,23 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.example.pokedex.R
 import com.example.pokedex.ViewModel.DetailViewModel
+import org.koin.android.ext.android.inject
 
 
 class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
-    private val model: DetailViewModel = DetailViewModel()
+    private val model: DetailViewModel by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val animDuration: Long = 1000
 
-        //it will be dynamic, since i get data from model -> listAdapted (click listener)
-        val url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
         val img: ImageView = view.findViewById(R.id.pokeImageDetail)
-        model.bindInfo(img, url)
-
         val txt: TextView = view.findViewById(R.id.pokeNameDetail)
-        val obs = Observer<Pair<String, String>> {text ->
+
+        val obs = Observer<Pair<String, Int>> { text ->
             txt.text = text.first
+            model.bindInfo(img, text.second)
         }
         model.inf.observe(viewLifecycleOwner, obs)
-
 
         //add data binding
         //binding.apply()....
@@ -50,9 +48,15 @@ class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
         model.animate(expBar, model.setExperience().first, animDuration)
 
         hp.text = getString(R.string.hp_text, model.setHp().first, model.setHp().second)
-        attack.text = getString(R.string.attack_text, model.setAttack().first, model.setAttack().second)
-        defence.text = getString(R.string.defence_text, model.setDefence().first, model.setDefence().second)
+        attack.text =
+            getString(R.string.attack_text, model.setAttack().first, model.setAttack().second)
+        defence.text =
+            getString(R.string.defence_text, model.setDefence().first, model.setDefence().second)
         speed.text = getString(R.string.speed_text, model.setSpeed().first, model.setSpeed().second)
-        exp.text = getString(R.string.experience_text, model.setExperience().first, model.setExperience().second)
+        exp.text = getString(
+            R.string.experience_text,
+            model.setExperience().first,
+            model.setExperience().second
+        )
     }
 }

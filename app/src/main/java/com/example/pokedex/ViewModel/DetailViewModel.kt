@@ -19,10 +19,10 @@ class DetailViewModel: ViewModel() {
         const val maxExperience = 700
     }
 
-    private val _inf = MutableLiveData<Pair<String, String>>()
-    val inf: LiveData<Pair<String, String>> = _inf
+    private val _inf = MutableLiveData<Pair<String, Int>>()
+    val inf: LiveData<Pair<String, Int>> = _inf
 
-    fun sendData(text: Pair<String, String>){
+    fun sendData(text: Pair<String, Int>){
         _inf.value = text
     }
 
@@ -32,14 +32,14 @@ class DetailViewModel: ViewModel() {
     private val speedPoints: Int = Random.nextInt(1, maxSpeed)
     private val experiencePoints: Int = Random.nextInt(1, maxExperience)
 
-
     fun animate(bar: ProgressBar, tillValue: Int, duration: Long){
         val anim: ObjectAnimator = ObjectAnimator.ofInt(bar, "progress", 0, tillValue)
         anim.duration = duration
         anim.start()
     }
 
-    fun bindInfo(img: ImageView, url: String){
+    fun bindInfo(img: ImageView, id: Int){
+        val url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png"
         Picasso.get().load(url).into(img)
     }
 
