@@ -1,4 +1,4 @@
-package com.example.pokedex.MainAdapter
+package com.example.pokedex.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,12 +10,13 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokedex.Model.PokeData
+import com.example.pokedex.model.PokeData
 import com.example.pokedex.R
-import com.example.pokedex.ViewModel.DetailViewModel
+import com.example.pokedex.viewModel.DetailViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.pokemon.view.*
 import kotlin.random.Random
+
 
 class PokemonListAdapter(private val detailModel: DetailViewModel) : ListAdapter<PokeData, PokemonListAdapter.PokemonViewHolder>(PokemonDiffCallback()) {
 
@@ -30,6 +31,8 @@ class PokemonListAdapter(private val detailModel: DetailViewModel) : ListAdapter
         holder.bind(getItem(position))
 
         //bad
+        //adapter should't know about models and and view or navigation
+        //solution is to handle click with click interface and navigate to another fragment from PokeListFragment....
         holder.itemView.setOnClickListener{ view ->
             detailModel.sendData(Pair(holder.itemView.name.text.toString(), (position + 1)))
             view.findNavController().navigate(R.id.action_pokeListFragment_to_pokeDetailsFragment)
@@ -42,8 +45,8 @@ class PokemonListAdapter(private val detailModel: DetailViewModel) : ListAdapter
     }
 
     class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val name = view.findViewById<TextView>(R.id.name)
-        val image = view.findViewById<ImageView>(R.id.image)
+        private val name: TextView = view.findViewById(R.id.name)
+        private val image: ImageView = view.findViewById(R.id.image)
 
         @SuppressLint("DefaultLocale")
         fun bind(pokemon: PokeData) {

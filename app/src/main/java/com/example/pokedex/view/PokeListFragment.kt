@@ -1,12 +1,12 @@
-package com.example.pokedex.View
+package com.example.pokedex.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import com.example.pokedex.MainAdapter.PokemonListAdapter
-import com.example.pokedex.Model.PokeData
+import com.example.pokedex.adapter.PokemonListAdapter
+import com.example.pokedex.model.PokeData
 import com.example.pokedex.R
-import com.example.pokedex.ViewModel.PokemonViewModel
+import com.example.pokedex.viewModel.PokemonViewModel
 import kotlinx.android.synthetic.main.fragment_poke_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

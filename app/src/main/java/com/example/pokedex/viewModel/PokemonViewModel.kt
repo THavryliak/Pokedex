@@ -1,13 +1,12 @@
-package com.example.pokedex.ViewModel
+package com.example.pokedex.viewModel
 
 import android.os.Handler
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.pokedex.Model.PokeData
-import com.example.pokedex.Model.PokeRepository
-import com.example.pokedex.Model.PokeRepositoryImpl
-import kotlin.random.Random
+import com.example.pokedex.model.PokeData
+import com.example.pokedex.model.PokeRepository
+import com.example.pokedex.model.PokeRepositoryImpl
 
 
 class PokemonViewModel(private val repo: PokeRepositoryImpl) : ViewModel() {
@@ -25,21 +24,17 @@ class PokemonViewModel(private val repo: PokeRepositoryImpl) : ViewModel() {
         isLoading()
 
         Handler().postDelayed({
-            //error example
-            if (Random.nextInt(1, 11) == 5) {
-                showError()
-            } else {
-                repo.getPokemonList(object : PokeRepository.ApiCallback<List<PokeData>> {
-                    override fun onSuccess(data: List<PokeData>) {
-                        showContent(data)
-                    }
-                    override fun onError() {
-                        showError()
-                    }
-                })
-            }
+            repo.getPokemonList(object : PokeRepository.ApiCallback<List<PokeData>> {
+                override fun onSuccess(data: List<PokeData>) {
+                    showContent(data)
+                }
+                override fun onError() {
+                    showError()
+                }
+            })
         }, 3000)
     }
+
 
     private fun isLoading() {
         _loadingState.value = true

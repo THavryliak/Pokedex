@@ -1,8 +1,6 @@
-package com.example.pokedex.Model.PokeApi
+package com.example.pokedex.model.api
 
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 

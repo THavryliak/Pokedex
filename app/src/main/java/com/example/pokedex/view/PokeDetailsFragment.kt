@@ -1,4 +1,4 @@
-package com.example.pokedex.View
+package com.example.pokedex.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.example.pokedex.R
-import com.example.pokedex.ViewModel.DetailViewModel
+import com.example.pokedex.viewModel.DetailViewModel
 import org.koin.android.ext.android.inject
 
 
-class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
+class PokeDetailsFragment() : Fragment(R.layout.fragment_poke_details) {
     private val model: DetailViewModel by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,14 +21,13 @@ class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
         val img: ImageView = view.findViewById(R.id.pokeImageDetail)
         val txt: TextView = view.findViewById(R.id.pokeNameDetail)
 
-        val obs = Observer<Pair<String, Int>> { text ->
-            txt.text = text.first
-            model.bindInfo(img, text.second)
-        }
-        model.inf.observe(viewLifecycleOwner, obs)
+        model.inf.observe(viewLifecycleOwner, { pair ->
+            txt.text = pair.first
+            model.bindInfo(img, pair.second)
+        })
+
 
         //add data binding
-        //binding.apply()....
         val hp: TextView = view.findViewById(R.id.health)
         val attack: TextView = view.findViewById(R.id.attack)
         val defence: TextView = view.findViewById(R.id.defence)

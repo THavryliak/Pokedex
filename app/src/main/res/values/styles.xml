@@ -26,4 +26,8 @@
         <item name="android:textColor">@color/text_stats_color</item>
     </style>
 
+    <style name="crd">
+        <item name="cardCornerRadius">18dp</item>
+    </style>
+
 </resources>
