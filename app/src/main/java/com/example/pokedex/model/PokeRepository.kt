@@ -1,4 +1,4 @@
-package com.example.pokedex.Model
+package com.example.pokedex.model
 
 
 interface PokeRepository {

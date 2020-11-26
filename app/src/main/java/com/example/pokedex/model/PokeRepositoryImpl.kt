@@ -1,6 +1,6 @@
-package com.example.pokedex.Model
+package com.example.pokedex.model
 
-import com.example.pokedex.Model.PokeApi.*
+import com.example.pokedex.model.api.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

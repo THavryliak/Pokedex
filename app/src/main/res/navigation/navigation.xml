@@ -6,7 +6,7 @@
     app:startDestination="@id/pokeListFragment">
     <fragment
         android:id="@+id/pokeListFragment"
-        android:name="com.example.pokedex.View.PokeListFragment"
+        android:name="com.example.pokedex.view.PokeListFragment"
         android:label="fragment_poke_list"
         tools:layout="@layout/fragment_poke_list" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/pokeDetailsFragment"
-        android:name="com.example.pokedex.View.PokeDetailsFragment"
+        android:name="com.example.pokedex.view.PokeDetailsFragment"
         android:label="fragment_poke_details"
         tools:layout="@layout/fragment_poke_details" />
 </navigation>

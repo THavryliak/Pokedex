@@ -1,4 +1,4 @@
-package com.example.pokedex.View
+package com.example.pokedex.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.lifecycle.Observer
 import com.example.pokedex.R
-import com.example.pokedex.ViewModel.DetailViewModel
+import com.example.pokedex.viewModel.DetailViewModel
 import org.koin.android.ext.android.inject
 
 
@@ -21,14 +20,13 @@ class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
         val img: ImageView = view.findViewById(R.id.pokeImageDetail)
         val txt: TextView = view.findViewById(R.id.pokeNameDetail)
 
-        val obs = Observer<Pair<String, Int>> { text ->
-            txt.text = text.first
-            model.bindInfo(img, text.second)
-        }
-        model.inf.observe(viewLifecycleOwner, obs)
+        model.inf.observe(viewLifecycleOwner, { pair ->
+            txt.text = pair.first
+            model.bindInfo(img, pair.second)
+        })
+
 
         //add data binding
-        //binding.apply()....
         val hp: TextView = view.findViewById(R.id.health)
         val attack: TextView = view.findViewById(R.id.attack)
         val defence: TextView = view.findViewById(R.id.defence)
@@ -41,6 +39,10 @@ class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
         val spdBar: ProgressBar = view.findViewById(R.id.speed_bar)
         val expBar: ProgressBar = view.findViewById(R.id.exp_bar)
 
+
+        // just 1.0 version
+        // get rid of ObjectAnimator in DetailViewModel
+        // need LiveData here -->
         model.animate(hpBar, model.setHp().first, animDuration)
         model.animate(atckBar, model.setAttack().first, animDuration)
         model.animate(defBar, model.setDefence().first, animDuration)

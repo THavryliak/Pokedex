@@ -1,4 +1,4 @@
-package com.example.pokedex.ViewModel
+package com.example.pokedex.viewModel
 
 import android.animation.ObjectAnimator
 import android.widget.ImageView
@@ -39,7 +39,7 @@ class DetailViewModel: ViewModel() {
     }
 
     fun bindInfo(img: ImageView, id: Int){
-        val url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png"
+        val url = "https://pokeres.bastionbot.org/images/pokemon/$id.png"
         Picasso.get().load(url).into(img)
     }
 
