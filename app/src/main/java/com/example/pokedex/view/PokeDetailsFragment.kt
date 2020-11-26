@@ -6,13 +6,12 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.lifecycle.Observer
 import com.example.pokedex.R
 import com.example.pokedex.viewModel.DetailViewModel
 import org.koin.android.ext.android.inject
 
 
-class PokeDetailsFragment() : Fragment(R.layout.fragment_poke_details) {
+class PokeDetailsFragment : Fragment(R.layout.fragment_poke_details) {
     private val model: DetailViewModel by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,6 +39,10 @@ class PokeDetailsFragment() : Fragment(R.layout.fragment_poke_details) {
         val spdBar: ProgressBar = view.findViewById(R.id.speed_bar)
         val expBar: ProgressBar = view.findViewById(R.id.exp_bar)
 
+
+        // just 1.0 version
+        // get rid of ObjectAnimator in DetailViewModel
+        // need LiveData here -->
         model.animate(hpBar, model.setHp().first, animDuration)
         model.animate(atckBar, model.setAttack().first, animDuration)
         model.animate(defBar, model.setDefence().first, animDuration)
