@@ -20,6 +20,8 @@ Pokemon description app
   
   Koin
   
+  Navigation component
+  
 ►Current UI
 -----------------------------
   
